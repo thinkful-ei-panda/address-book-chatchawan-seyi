@@ -42,10 +42,9 @@ app.delete('/address/:userId', validateBearerToken);
 app.post('/address', validateBearerToken);
 
 app.post('/address', (req, res) => {
-  const { address1, address2,  }
+  const { zip } = req.body;
   const id = uuid();
-
-  res.send(id);
+  res.send(zip, id);
 });
 
 app.delete('/address/:userId', (req, res) => {
